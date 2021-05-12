@@ -1,0 +1,60 @@
+HTTP:
+  Address: localhost:8080
+  ## 单位为秒
+  ReadTimeout: 60
+  WriteTimeout: 60
+  Mode: test
+  CORS:
+    Enable: true
+    ## 可以执行跨域请求的来源列表，*表示全部
+    AllowOrigins:
+      - '*'
+    ## 允许跨域请求的方法列表
+    AllowMethods:
+      - GET
+      - POST
+      - PUT
+      - PATCH
+      - DELETE
+      - HEAD
+    ## 允许跨域请求的非简单头列表
+    AllowHeaders:
+      - Origin
+      - Content-Length
+      - Content-Type
+      - Authorization
+    ## 是否可以包含用户凭据
+    AllowCredentials: true
+    ## 预处理请求的结果可以缓存多长时间（以秒为单位）
+    MaxAge: 72000
+
+RPC:
+  ## network: tcp tcp4 tcp6 unix unixpacket
+  Network: tcp
+  Address: localhost:9091
+  CertFile:
+  KeyFile: 
+  CAFile:
+
+Storage:
+  MySQL:
+    Address: localhost:3306
+    User: root
+    Password: 123456
+    DBName: changuan
+    MaxIdeConns: 10
+    MaxOpenConns: 100
+  Redis:
+    Address: localhost:6379
+    DBNum: 0
+    Password:
+
+Logger:
+  GinLogFilePath:
+  MySQLLogFilePath:
+  ErrorLog:
+    ## 日志等级：trace debug info warn error fatal panic
+    ## 默认为debug，设置错误也是debug
+    Level: debug
+    FilePath:
+
