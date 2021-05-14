@@ -3,6 +3,10 @@ HTTP:
   ## 单位为秒
   ReadTimeout: 60
   WriteTimeout: 60
+  ## Token有效时长，单位为天
+  TokenExpDur: 90
+  ## 同一用户最多在线设备
+  MaxOnlineDev: 5
   Mode: test
   CORS:
     Enable: true

@@ -27,7 +27,8 @@ var versionCmd = cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(&versionCmd)
-	rootCmd.Flags().StringVar(&param.ConfType, "mode", "test", "程序运行模式，只支持: test debug release三种模式")
+	rootCmd.Flags().StringVar(&param.ConfType, "mode", "test", "程序运行模式，只支持: test debug release三种模式 mode (required)")
+	rootCmd.MarkFlagRequired("mode")
 }
 
 func cmdExec() {
